@@ -89,6 +89,24 @@ p {
     width: 180px;
 }
 
+/* Heart Explosion Styles */
+.heart {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    font-size: 30px;
+    z-index: 9999;       /* Make sure they appear on top */
+    pointer-events: none; /* Let her click through them if needed */
+    animation: fly 1s ease-out forwards;
+}
+
+@keyframes fly {
+    to {
+        transform: translate(var(--x), var(--y)) rotate(var(--r));
+        opacity: 1;
+    }
+}
+
 /* buttons */
 .buttons {
     display: flex;

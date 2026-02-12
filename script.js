@@ -60,18 +60,35 @@ noBtn.addEventListener("mouseover", () => {
 // YES is clicked
 
 // YES is clicked
+// YES is clicked
 yesBtn.addEventListener("click", () => {
-    title.textContent = "NO WAYYYYYYYY";
+    // 1. Original Success Logic
+    title.textContent = "Yippeeee!";
     catImg.src = "tbh-creature.gif";
     document.querySelector(".letter-window").classList.add("final");
     buttons.style.display = "none";
     finalText.style.display = "block";
 
-    // --- NEW CONFETTI CODE ---
-    confetti({
-        particleCount: 100,
-        spread: 70,
-        origin: { y: 0.6 }
-    });
-    // -------------------------
+    // 2. Heart Explosion Logic
+    // Create 50 hearts
+    for (let i = 0; i < 50; i++) {
+        const heart = document.createElement("div");
+        heart.classList.add("heart");
+        heart.innerHTML = "❤️"; // You can use 💖, 💘, or even her name!
+
+        // Randomize where they land
+        // Math.random() gives 0 to 1. We multiply by screen width/height to spread them out.
+        // We subtract half the width/height to make them go left/right/up/down from center.
+        const x = (Math.random() - 0.5) * window.innerWidth;
+        const y = (Math.random() - 0.5) * window.innerHeight;
+        const r = Math.random() * 360; // Random rotation
+
+        // Set the custom CSS variables for this specific heart
+        heart.style.setProperty("--x", `${x}px`);
+        heart.style.setProperty("--y", `${y}px`);
+        heart.style.setProperty("--r", `${r}deg`);
+
+        // Add to the page
+        document.body.appendChild(heart);
+    }
 });

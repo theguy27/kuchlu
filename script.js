@@ -59,14 +59,19 @@ noBtn.addEventListener("mouseover", () => {
 
 // YES is clicked
 
+// YES is clicked
 yesBtn.addEventListener("click", () => {
-    title.textContent = "Yippeeee!";
-
+    title.textContent = "NO WAYYYYYYYY";
     catImg.src = "tbh-creature.gif";
-
     document.querySelector(".letter-window").classList.add("final");
-
     buttons.style.display = "none";
-
     finalText.style.display = "block";
+
+    // --- NEW CONFETTI CODE ---
+    confetti({
+        particleCount: 100,
+        spread: 70,
+        origin: { y: 0.6 }
+    });
+    // -------------------------
 });

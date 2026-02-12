@@ -63,7 +63,8 @@ noBtn.addEventListener("mouseover", () => {
 // YES is clicked
 yesBtn.addEventListener("click", () => {
     // 1. Original Success Logic
-    title.textContent = "Yippeeee!";
+    title.textContent = "YAYAYAYYAYAYYYYYYY!";
+    title.style.fontSize = "60px";
     catImg.src = "tbh-creature.gif";
     document.querySelector(".letter-window").classList.add("final");
     buttons.style.display = "none";

@@ -72,6 +72,11 @@ yesBtn.addEventListener("click", () => {
 
     // 2. Heart Explosion Logic
     // Create 50 hearts
+    confetti({
+        particleCount: 500,
+        spread: 100,
+        origin: { y: 0.6 }
+    });
     for (let i = 0; i < 50; i++) {
         const heart = document.createElement("div");
         heart.classList.add("heart");

@@ -73,8 +73,8 @@ yesBtn.addEventListener("click", () => {
     // 2. Heart Explosion Logic
     // Create 50 hearts
     confetti({
-        particleCount: 500,
-        spread: 100,
+        particleCount: 700,
+        spread: 300,
         origin: { y: 0.6 }
     });
     for (let i = 0; i < 50; i++) {
